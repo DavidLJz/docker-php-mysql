@@ -4,6 +4,11 @@
 
 # editor files
 .idea*
+*.sublime*
 
 # composer vendor files
 vendor/
+
+/www
+.env
+/dump.sql
