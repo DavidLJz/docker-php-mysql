@@ -13,6 +13,7 @@ services:
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
+      TZ: ${TIMEZONE}
     volumes:
     - ./dump.sql:/docker-entrypoint-initdb.d/dump.sql:ro
     ports:
@@ -24,6 +25,8 @@ services:
       context: ./docker/php
       args:
         php_version: ${PHP_VERSION}
+    environment: 
+        TZ: ${TIMEZONE}
     container_name: ${COMPOSE_PROJECT_NAME}-php
     ports:
       - "${PHP_PORT}:80"
