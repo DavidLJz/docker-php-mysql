@@ -14,8 +14,6 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
       TZ: ${TIMEZONE}
-    volumes:
-    - ./dump.sql:/docker-entrypoint-initdb.d/dump.sql:ro
     ports:
       - "3306:3306"
     restart: on-failure 
